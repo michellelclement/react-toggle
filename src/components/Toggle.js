@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-const Toggle = () => {
+const Toggle = ({ option1, option2, correctOption }) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const correctOption = "option2"; //Set correct option
 
   const clicked = (e) => {
     setSelectedOption(e.target.id);
@@ -10,29 +9,32 @@ const Toggle = () => {
 
   return (
     <div className="toggle">
-      <input
-        type="radio"
-        className="toggle-option toggle-start"
-        id="option1"
-        name="toggle-option"
-        onChange={clicked}
-      />
-      <label htmlFor="option1">Option 1</label>
-      <input
-        type="radio"
-        className="toggle-option toggle-end"
-        id="option2"
-        name="toggle-option"
-        onChange={clicked}
-      />
-      <label htmlFor="option2">Option 2</label>
+      <div className="toggle__container">
+        <input
+          type="radio"
+          className="toggle-option toggle-start"
+          id={option1.id}
+          name="toggle-option"
+          onChange={clicked}
+        />
+        <label htmlFor={option1.id}>{option1.text}</label>
+        <input
+          type="radio"
+          className="toggle-option toggle-end"
+          id={option2.id}
+          name="toggle-option"
+          onChange={clicked}
+        />
+        <label htmlFor="option2">{option2.text}</label>
+      </div>
+
       <div className="toggle-option-slider"></div>
 
-      <p>
+      {/* <p>
         {selectedOption === correctOption
           ? "Correct Answer"
           : "Incorrect sorry!"}
-      </p>
+      </p> */}
     </div>
   );
 };

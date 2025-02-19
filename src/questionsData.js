@@ -1,26 +1,40 @@
 const questionsData = [
   {
     id: 1,
-    options: [
-      { id: "option1", text: "Cell Wall" },
-      { id: "option2", text: "Ribosomes" },
-    ],
+    option1: {
+      id: "Cell Wall",
+      text: "Ribosomes",
+    },
+    option2: {
+      id: "option2",
+      text: "Chloroplast",
+    },
     correctAnswer: "option1",
   },
   {
     id: 2,
-    options: [
-      { id: "option1", text: "Cytoplasm" },
-      { id: "option2", text: "Chloroplast" },
-    ],
+    option1: {
+      id: "option1",
+      text: "Cytoplasm",
+    },
+    option2: {
+      id: "option2",
+      text: "Chloroplast",
+    },
     correctAnswer: "option2",
   },
   {
     id: 3,
-    options: [
-      { id: "option1", text: "Partially permeable membrane" },
-      { id: "option2", text: "Impermeable membrane" },
-    ],
+    option1: {
+      id: "option1",
+      text: "Partially permeable membrane",
+    },
+    option2: {
+      id: "option2",
+      text: "Impermeable membrane",
+    },
     correctAnswer: "option1",
   },
 ];
+
+export default questionsData;
