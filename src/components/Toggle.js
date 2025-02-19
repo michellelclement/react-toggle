@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 
-const Toggle = ({ option1, option2, correctOption }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
+const Toggle = ({
+  option1,
+  option2,
+  correctOption,
+  toggleId,
+  selectedOption,
+  onOptionChange,
+}) => {
+  // Handle the change when a user selects a radio button
   const clicked = (e) => {
-    setSelectedOption(e.target.id);
+    onOptionChange(toggleId, e.target.id);
   };
 
   return (
@@ -13,28 +19,27 @@ const Toggle = ({ option1, option2, correctOption }) => {
         <input
           type="radio"
           className="toggle-option toggle-start"
-          id={option1.id}
-          name="toggle-option"
+          id={`${toggleId}-option1`}
+          name={`toggle-${toggleId}`} // Group together radio buttons per question
           onChange={clicked}
         />
-        <label htmlFor={option1.id}>{option1.text}</label>
+        <label htmlFor={`${toggleId}-option1`}>{option1.text}</label>
         <input
           type="radio"
           className="toggle-option toggle-end"
-          id={option2.id}
-          name="toggle-option"
+          id={`${toggleId}-option2`}
+          name={`toggle-${toggleId}`}
           onChange={clicked}
         />
-        <label htmlFor="option2">{option2.text}</label>
+        <label htmlFor={`${toggleId}-option2`}>{option2.text}</label>
+
+        <div className="toggle-option-slider"></div>
       </div>
-
-      <div className="toggle-option-slider"></div>
-
-      {/* <p>
+      <p>
         {selectedOption === correctOption
-          ? "Correct Answer"
-          : "Incorrect sorry!"}
-      </p> */}
+          ? "✅ Correct Answer"
+          : "❌ Incorrect, try again!"}
+      </p>
     </div>
   );
 };

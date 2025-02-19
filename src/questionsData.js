@@ -2,14 +2,14 @@ const questionsData = [
   {
     id: 1,
     option1: {
-      id: "Cell Wall",
-      text: "Ribosomes",
+      id: "option1",
+      text: "Cell Wall",
     },
     option2: {
       id: "option2",
       text: "Chloroplast",
     },
-    correctAnswer: "option1",
+    correctOption: "option1",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const questionsData = [
       id: "option2",
       text: "Chloroplast",
     },
-    correctAnswer: "option2",
+    correctOption: "option2",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const questionsData = [
       id: "option2",
       text: "Impermeable membrane",
     },
-    correctAnswer: "option1",
+    correctOption: "option1",
   },
 ];
 
