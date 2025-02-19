@@ -1,10 +1,16 @@
+//Import components
+import Toggles from "./components/Toggles";
+import Toggle from "./components/Toggle";
+
 //Import styles
 import "./styles/app.scss";
 
 function App() {
   return (
     <div className="app">
-      <div className="toggle">Hello there</div>
+      <h1>Question title</h1>
+
+      <Toggles />
     </div>
   );
 }
