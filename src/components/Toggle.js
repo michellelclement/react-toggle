@@ -35,11 +35,6 @@ const Toggle = ({
 
         <div className="toggle-option-slider"></div>
       </div>
-      <p>
-        {selectedOption === correctOption
-          ? "✅ Correct Answer"
-          : "❌ Incorrect, try again!"}
-      </p>
     </div>
   );
 };

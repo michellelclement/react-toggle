@@ -11,6 +11,12 @@ const Toggles = () => {
     }, {})
   );
 
+  const allCorrect = Object.keys(selectedOptions).every(
+    (key) =>
+      selectedOptions[key] ===
+      questionsData.find((q) => q.id === Number(key)).correctOption
+  );
+
   // Store only "option1" or "option2" (not "1-option1") to be able to compare to correctOption
   const handleOptionChange = (questionId, selectedOptionId) => {
     const selectedOption = selectedOptionId.split("-")[1];
@@ -37,6 +43,13 @@ const Toggles = () => {
           onOptionChange={handleOptionChange}
         />
       ))}
+
+      {/* Show message if all answers are correct or not */}
+      {allCorrect ? (
+        <p>The answer is correct!</p>
+      ) : (
+        <p>All answer is inccorect correct</p>
+      )}
     </div>
   );
 };
