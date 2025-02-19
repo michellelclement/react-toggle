@@ -8,7 +8,7 @@ import "./styles/app.scss";
 function App() {
   return (
     <div className="app">
-      <h1>Question title</h1>
+      {/* <h1>Question title</h1> */}
 
       <Toggles />
     </div>

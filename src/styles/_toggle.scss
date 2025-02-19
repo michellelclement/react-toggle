@@ -1,3 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+$white: rgba(255, 255, 255, 0.8);
+$opaqueWhite: rgba(255, 255, 255, 0.5);
+$grey: rgb(138, 127, 118);
+
 .toggle {
-  border: 1px solid orange;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 2px solid $opaqueWhite;
+  border-radius: 50px;
+}
+
+.toggle input[type="radio"] {
+  display: none;
+}
+
+.toggle label {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  color: #ffff;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.toggle label {
+  width: 50%;
+}
+
+.toggle-option-slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.toggle-option-slider::after {
+  content: "";
+  width: 50%;
+  height: 46px; // Make this a calc of height minus border
+  border-radius: 50px;
+  background: $opaqueWhite;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.15s ease;
+}
+
+.toggle .toggle-option-slider::after {
+  width: 50%;
+}
+
+.toggle input:first-of-type:checked ~ .toggle-option-slider::after {
+  left: 0px;
+}
+
+.toggle input:nth-of-type(2):checked ~ .toggle-option-slider::after {
+  // left: calc((100% - 31%) / 2);
+  left: 50%;
+}
+
+.toggle input:nth-of-type(2):checked ~ .toggle-option-slider::after {
+  // left: calc((100% - 47%) - 4px);
+  left: 50%;
+}
+
+// .toggle.radio-trio input:nth-of-type(3):checked ~ .toggle-option-slider::after {
+//   left: calc((100% - 31%) - 4px);
+//   border: 5px solid red;
+// }
+
+.toggle-option:checked + label {
+  color: $grey;
+  transition: all 0.15s ease;
 }

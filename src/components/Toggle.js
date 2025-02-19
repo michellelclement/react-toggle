@@ -3,9 +3,21 @@ import React from "react";
 const Toggle = () => {
   return (
     <div className="toggle">
-      <h2>Each toggle</h2>
-      <h2>Each toggle</h2>
-      <h2>Each toggle</h2>
+      <input
+        type="radio"
+        className="toggle-option toggle-start"
+        id="option1"
+        name="toggle-option2"
+      />
+      <label htmlFor="option1">Option 1</label>
+      <input
+        type="radio"
+        className="toggle-option toggle-end"
+        id="option2"
+        name="toggle-option2"
+      />
+      <label htmlFor="option2">Option 2</label>
+      <div className="toggle-option-slider"></div>
     </div>
   );
 };
