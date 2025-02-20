@@ -1,3 +1,5 @@
+const questionTitle = "An animal cell contains";
+
 const questionsData = [
   {
     id: 1,
@@ -7,7 +9,7 @@ const questionsData = [
     },
     option2: {
       id: "option2",
-      text: "Chloroplast",
+      text: "Ribosomes",
     },
     correctOption: "option1",
   },
@@ -35,6 +37,18 @@ const questionsData = [
     },
     correctOption: "option1",
   },
+  {
+    id: 4,
+    option1: {
+      id: "option1",
+      text: "Cellulose",
+    },
+    option2: {
+      id: "option2",
+      text: "Mitochondria",
+    },
+    correctOption: "option2",
+  },
 ];
 
-export default questionsData;
+export { questionsData, questionTitle };

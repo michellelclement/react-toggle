@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Toggle from "./Toggle";
-import questionsData from "../questionsData";
+import { questionsData, questionTitle } from "../questionsData";
 
 const Toggles = () => {
   //Initialise null state for all questions
@@ -32,7 +32,7 @@ const Toggles = () => {
     // Pass down current selected option
     // Pass handleOptionChange so Toggle.js can call it when user selects an option
     <div className="toggles">
-      <h1 className="toggles-question">Question Title</h1>
+      <h1 className="toggles-question">{questionTitle}</h1>
       {questionsData.map((question) => (
         <Toggle
           key={question.id}
