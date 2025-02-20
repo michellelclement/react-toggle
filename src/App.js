@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
-//Import components
 import Toggles from "./components/Toggles";
-
-//Import styles
 import "./styles/app.scss";
 
 function App() {
-  // Track progress of correct answers as a percentage
+  // Track progress of correct answers (0 to 100)
+  // Set initial value of progress to 0
   const [progress, setProgress] = useState(0);
 
   return (

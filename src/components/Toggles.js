@@ -3,7 +3,7 @@ import Toggle from "./Toggle";
 import { questionsData, questionTitle } from "../questionsData";
 
 const Toggles = ({ onProgressChange }) => {
-  //Initialise null state for all questions
+  // Creates an object where each question ID is initially set to null
   const [selectedOptions, setSelectedOptions] = useState(
     questionsData.reduce((acc, question) => {
       acc[question.id] = null;
@@ -11,28 +11,27 @@ const Toggles = ({ onProgressChange }) => {
     }, {})
   );
 
-  // Looop through selectedOoptions and check if user's answer matches correct answer
+  // Loop through selectedOptions and check if user's answer matches correct answer
   const correctCount = Object.keys(selectedOptions).filter(
     (key) =>
       selectedOptions[key] ===
       questionsData.find((q) => q.id === Number(key)).correctOption
   ).length;
 
-  // Calculate percentage progress
-  // If user has answered 2 out of 4 questions correctly, count will be 2 correct of 4 questions
-  // (2/4) * 100 = 50%
+  // Calculate percentage progress (how many answers are correct out of total)
   const progress = (correctCount / questionsData.length) * 100;
 
-  // Pass progress to parent (App.js)
+  // Notify App.js whenever progress updates (to change background color)
   useEffect(() => {
     onProgressChange(progress);
   }, [progress, onProgressChange]);
 
+  // Update the selected answer when a user clicks an option
   const handleOptionChange = (questionId, selectedOptionId) => {
-    const selectedOption = selectedOptionId.split("-")[1];
+    const selectedOption = selectedOptionId.split("-")[1]; // Extract 'option1' from '1-option1' etc
     setSelectedOptions((prevState) => ({
-      ...prevState,
-      [questionId]: selectedOption,
+      ...prevState, // Keep previous state values
+      [questionId]: selectedOption, // Update only the changed question
     }));
   };
 

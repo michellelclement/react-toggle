@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Toggle = ({
-  option1,
-  option2,
-  correctOption,
-  toggleId,
-  selectedOption,
-  onOptionChange,
-}) => {
+const Toggle = ({ option1, option2, toggleId, onOptionChange }) => {
   // Handle the change when a user selects a radio button
   const clicked = (e) => {
     onOptionChange(toggleId, e.target.id);
