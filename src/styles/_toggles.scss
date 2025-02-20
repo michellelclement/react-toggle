@@ -5,7 +5,11 @@
   align-items: center;
   gap: 2rem;
 
-  @include media($m-screen-up) {
+  @include media($l-screen-up) {
     width: 50%;
   }
+}
+
+.toggles-answer {
+  font-size: 22px;
 }

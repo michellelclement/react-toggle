@@ -32,6 +32,7 @@ const Toggles = () => {
     // Pass down current selected option
     // Pass handleOptionChange so Toggle.js can call it when user selects an option
     <div className="toggles">
+      <h1 className="toggles-question">Question Title</h1>
       {questionsData.map((question) => (
         <Toggle
           key={question.id}
@@ -46,9 +47,9 @@ const Toggles = () => {
 
       {/* Show message if all answers are correct or not */}
       {allCorrect ? (
-        <p>The answer is correct!</p>
+        <p className="toggles-answer">The answer is correct!</p>
       ) : (
-        <p>All answer is inccorect correct</p>
+        <p className="toggles-answer">The answer is incorect</p>
       )}
     </div>
   );
