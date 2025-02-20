@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Toggle from "./Toggle";
 import { questionsData, questionTitle } from "../questionsData";
 
-// Pass prop to notify of background colour change when all options are correctly selected
-const Toggles = ({ onAllCorrectChange }) => {
+const Toggles = ({ onProgressChange }) => {
   //Initialise null state for all questions
   const [selectedOptions, setSelectedOptions] = useState(
     questionsData.reduce((acc, question) => {
@@ -12,29 +11,30 @@ const Toggles = ({ onAllCorrectChange }) => {
     }, {})
   );
 
-  // Check is all users answers are correct
-  const allCorrect = Object.keys(selectedOptions).every(
+  // Looop through selectedOoptions and check if user's answer matches correct answer
+  const correctCount = Object.keys(selectedOptions).filter(
     (key) =>
-      // Users selected option: 'opeion1' etc
-      //Find correctOption and see if match
       selectedOptions[key] ===
       questionsData.find((q) => q.id === Number(key)).correctOption
-  );
+  ).length;
 
-  // Store only "option1" or "option2" (not "1-option1") to be able to compare to correctOption
-  // Update SelectedOptions with user's selected option
+  // Calculate percentage progress
+  // If user has answered 2 out of 4 questions correctly, count will be 2 correct of 4 questions
+  // (2/4) * 100 = 50%
+  const progress = (correctCount / questionsData.length) * 100;
+
+  // Pass progress to parent (App.js)
+  useEffect(() => {
+    onProgressChange(progress);
+  }, [progress, onProgressChange]);
+
   const handleOptionChange = (questionId, selectedOptionId) => {
     const selectedOption = selectedOptionId.split("-")[1];
-
     setSelectedOptions((prevState) => ({
       ...prevState,
       [questionId]: selectedOption,
     }));
   };
-
-  useEffect(() => {
-    onAllCorrectChange(allCorrect);
-  }, [allCorrect, onAllCorrectChange]);
 
   return (
     // Loop through question data and render a toggle for each question
@@ -55,7 +55,7 @@ const Toggles = ({ onAllCorrectChange }) => {
       ))}
 
       {/* Show message if all answers are correct or not */}
-      {allCorrect ? (
+      {progress === 100 ? (
         <p className="toggles-answer">The answer is correct!</p>
       ) : (
         <p className="toggles-answer">The answer is incorect</p>
