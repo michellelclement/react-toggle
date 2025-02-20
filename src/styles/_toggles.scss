@@ -1,7 +1,11 @@
 .toggles {
-  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
+
+  @include media($m-screen-up) {
+    width: 50%;
+  }
 }

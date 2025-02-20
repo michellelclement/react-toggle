@@ -15,7 +15,7 @@ const Toggle = ({
 
   return (
     <div className="toggle">
-      <div className="toggle__container">
+      <div className="toggle-container">
         <input
           type="radio"
           className="toggle-option toggle-start"
