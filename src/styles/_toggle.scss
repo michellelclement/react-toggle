@@ -1,10 +1,8 @@
-@import "_variables.scss";
-
 .toggle {
   display: inline-block;
   position: relative;
   width: 100%;
-  height: 50px;
+  // height: 50px;
   border: 2px solid $opaqueWhite;
   border-radius: 50px;
   margin: 2rem;
@@ -16,13 +14,14 @@
 
 .toggle label {
   display: inline-block;
-  position: relative;
-  height: 100%;
+  // position: relative;
+  // height: 100%;
   color: #ffff;
   text-align: center;
-  align-content: center;
+  padding: 1rem;
+  // align-content: center;
   cursor: pointer;
-  z-index: 3;
+  // z-index: 3;
 }
 
 .toggle label {
@@ -40,7 +39,7 @@
 .toggle-option-slider::after {
   content: "";
   width: 50%;
-  height: 46px; // Make this a calc of height minus border
+  height: 100%; // Make this a calc of height minus border
   border-radius: 50px;
   background: $opaqueWhite;
   position: absolute;

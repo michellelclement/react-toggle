@@ -1,0 +1,44 @@
+@mixin media($breakpoint) {
+  @media only screen and ($breakpoint) {
+    @content;
+  }
+}
+
+$xxs-screen: 380px;
+$xs-screen: 420px;
+$s-screen: 550px;
+$m-screen: 768px;
+$l-screen: 960px;
+$xl-screen: 1200px;
+$xxl-screen: 1440px;
+
+$xxs-screen-down: "max-width: calc(#{$xxs-screen} - #{1px})";
+$xxs-screen-up: "min-width: #{$xxs-screen}";
+
+$xs-screen-down: "max-width: calc(#{$xs-screen} - #{1px})";
+$xs-screen-up: "min-width: #{$xs-screen}";
+
+$s-screen-down: "max-width: calc(#{$s-screen} - #{1px})";
+$s-screen-up: "min-width: #{$s-screen}";
+
+$m-screen-down: "max-width: calc(#{$m-screen} - #{1px})";
+$m-screen-up: "min-width: #{$m-screen}";
+
+$l-screen-down: "max-width: calc(#{$l-screen} - #{1px})";
+$l-screen-up: "min-width: #{$l-screen}";
+
+$xl-screen-down: "max-width: calc(#{$xl-screen} - #{1px})";
+$xl-screen-up: "min-width: #{$xl-screen}";
+
+$xxl-screen-down: "max-width: calc(#{$xxl-screen} - #{1px})";
+$xxl-screen-up: "min-width: #{$xxl-screen}";
+
+$breakpoints: (
+  xxs: $xxs-screen-up,
+  xs: $xs-screen-up,
+  s: $s-screen-up,
+  m: $m-screen-up,
+  l: $l-screen-up,
+  xl: $xl-screen-up,
+  xxl: $xxl-screen-up,
+);
