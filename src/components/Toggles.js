@@ -50,6 +50,7 @@ const Toggles = ({ onProgressChange }) => {
           toggleId={question.id}
           selectedOption={selectedOptions[question.id]}
           onOptionChange={handleOptionChange}
+          isDisabled={progress === 100}
         />
       ))}
 

@@ -1,9 +1,11 @@
 import React from "react";
 
-const Toggle = ({ option1, option2, toggleId, onOptionChange }) => {
+const Toggle = ({ option1, option2, toggleId, onOptionChange, isDisabled }) => {
   // Handle the change when a user selects a radio button
   const clicked = (e) => {
-    onOptionChange(toggleId, e.target.id);
+    if (!isDisabled) {
+      onOptionChange(toggleId, e.target.id);
+    }
   };
 
   return (
