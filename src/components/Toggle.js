@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
+  const [isStacked, setIsStacked] = useState(false);
+
+  useEffect(() => {
+    const maxCharLimit = 15; // Adjust this as needed
+    if (
+      option1.text.length > maxCharLimit ||
+      option2.text.length > maxCharLimit
+    ) {
+      setIsStacked(true);
+    }
+  }, [option1.text, option2.text]);
+
   // Handle the change when a user selects a radio button
   const clicked = (e) => {
     if (!isLocked) {
@@ -10,7 +22,11 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
 
   return (
     <div className={`toggle ${isLocked ? "toggle--locked" : ""}`}>
-      <div className="toggle-container">
+      <div
+        className={`toggle-container ${
+          isStacked ? "toggle-container--stacked" : ""
+        }`}
+      >
         <input
           type="radio"
           className="toggle-option toggle-start"
