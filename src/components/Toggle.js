@@ -1,13 +1,15 @@
 import React from "react";
 
-const Toggle = ({ option1, option2, toggleId, onOptionChange }) => {
+const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
   // Handle the change when a user selects a radio button
   const clicked = (e) => {
-    onOptionChange(toggleId, e.target.id);
+    if (!isLocked) {
+      onOptionChange(toggleId, e.target.id);
+    }
   };
 
   return (
-    <div className="toggle">
+    <div className={`toggle ${isLocked ? "toggle--locked" : ""}`}>
       <div className="toggle-container">
         <input
           type="radio"
@@ -15,6 +17,7 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange }) => {
           id={`${toggleId}-option1`}
           name={`toggle-${toggleId}`} // Group together radio buttons per question
           onChange={clicked}
+          disabled={isLocked} // Disable when locked
         />
         <label htmlFor={`${toggleId}-option1`}>{option1.text}</label>
         <input
@@ -23,6 +26,7 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange }) => {
           id={`${toggleId}-option2`}
           name={`toggle-${toggleId}`}
           onChange={clicked}
+          disabled={isLocked}
         />
         <label htmlFor={`${toggleId}-option2`}>{option2.text}</label>
 
