@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
   const [isStacked, setIsStacked] = useState(false);
 
+  // Check length of option text in order to change layout
   useEffect(() => {
     const maxCharLimit = 15; // Adjust this as needed
     if (
@@ -21,12 +22,12 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
   };
 
   return (
-    <div className={`toggle ${isLocked ? "toggle--locked" : ""}`}>
-      <div
-        className={`toggle-container ${
-          isStacked ? "toggle-container--stacked" : ""
-        }`}
-      >
+    <div
+      className={`toggle ${isLocked ? "toggle--locked " : ""}${
+        isStacked ? "toggle--stacked" : ""
+      }`}
+    >
+      <div className="toggle-container">
         <input
           type="radio"
           className="toggle-option toggle-start"

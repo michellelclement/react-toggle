@@ -67,51 +67,56 @@
 
 // Stacked
 @include media($m-screen-down) {
-  .toggle-container--stacked {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    position: relative;
+  .toggle--stacked {
+    border-radius: 20px;
+    overflow: hidden;
 
-    .toggle-option-slider {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    label {
-      text-align: center;
-      width: 100%;
-      height: 50%; // Ensure each label takes half the height
+    .toggle-container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      flex-direction: column;
+      align-items: stretch;
+      position: relative;
 
-    .toggle-option-slider::after {
-      content: "";
-      width: 100%; // Full width
-      height: 50%; // Cover half vertically
-      top: 0; // Default position
-      left: 0;
-      border-radius: 50px;
-      background: $opaqueWhite;
-      position: absolute;
-      z-index: 2;
-      transition: top 0.2s ease-in-out; // Animate vertical movement
-    }
+      .toggle-option-slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
 
-    // Move the slider down when the second option is selected
-    input:first-of-type:checked ~ .toggle-option-slider::after {
-      top: 0; // Stays at the top when first option is selected
-    }
+      label {
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    input:nth-of-type(2):checked ~ .toggle-option-slider::after {
-      top: 50%; // Moves down when second option is selected
-      left: 0;
+      .toggle-option-slider::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        background: $opaqueWhite;
+        position: absolute;
+        z-index: 2;
+        transition: top 0.2s ease-in-out;
+      }
+
+      // Move the slider down when the second option is selected
+      input:first-of-type:checked ~ .toggle-option-slider::after {
+        top: 0;
+      }
+
+      input:nth-of-type(2):checked ~ .toggle-option-slider::after {
+        top: 50%;
+        left: 0;
+      }
     }
   }
 }
