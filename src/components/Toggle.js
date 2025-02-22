@@ -23,8 +23,8 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
 
   return (
     <div
-      className={`toggle ${isLocked ? "toggle--locked " : ""}${
-        isStacked ? "toggle--stacked" : ""
+      className={`toggle${isStacked ? " toggle--stacked" : ""}${
+        isLocked ? " toggle--locked" : ""
       }`}
     >
       <div className="toggle-container">
