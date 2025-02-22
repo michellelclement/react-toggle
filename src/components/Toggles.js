@@ -20,6 +20,7 @@ const Toggles = ({ onProgressChange }) => {
 
   // Calculate percentage progress (how many answers are correct out of total)
   const progress = (correctCount / questionsData.length) * 100;
+  const isLocked = progress === 100;
 
   // Notify App.js whenever progress updates (to change background color)
   useEffect(() => {
@@ -28,6 +29,8 @@ const Toggles = ({ onProgressChange }) => {
 
   // Update the selected answer when a user clicks an option
   const handleOptionChange = (questionId, selectedOptionId) => {
+    if (isLocked) return;
+
     const selectedOption = selectedOptionId.split("-")[1]; // Extract 'option1' from '1-option1' etc
     setSelectedOptions((prevState) => ({
       ...prevState, // Keep previous state values
@@ -50,7 +53,7 @@ const Toggles = ({ onProgressChange }) => {
           toggleId={question.id}
           selectedOption={selectedOptions[question.id]}
           onOptionChange={handleOptionChange}
-          isDisabled={progress === 100}
+          isLocked={isLocked}
         />
       ))}
 
