@@ -68,7 +68,7 @@ This project was bootstrapped with the [Create React App](https://create-react-a
 
 ### Clone the repository
 
-`[GitHub Repository](https://github.com/yourusername/your-repo.git)`:
+`[https://github.com/michellelclement/react-toggle](https://github.com/michellelclement/react-toggle)`:
 
 ### Install dependencies:
 
