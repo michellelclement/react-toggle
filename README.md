@@ -54,7 +54,7 @@ This project was bootstrapped with the [Create React App](https://create-react-a
   - The Figma design shows three background colour variations, but one example has four toggles while the others have three.
   - Since the component needs to support a variable number of toggles, using an overall percentage of correctness ensures a scalable approach, rather than hardcoding specific colour changes for an unknown number of toggles.
   - This approach could be improved by introducing additional colour transition points, such as 25% and 75% correctness if the number of toggles is expected to be greater than three or four.
-- **Stacked option design on small screens**: Based on the supplied designs, I have assumed that when a longer option is present, the layout changes for easier readability. I have added a check to see if the option text is over a certain length, and if it is, add a class to the `Toggle`, to style it differently.
+- **Stacked option design on small screens**: Based on the supplied designs, I have assumed that when an option with longer text is present, the layout changes for easier readability. I have added a check to see if the option text is over a certain length, and if it is, add a class to the `Toggle`, to style it differently. This stops text stacking to one word per line on small screens.
 - **Browser testing**: The component has been designed to be responsive down to 320px and tested on modern browsers. However, it has not been tested on older browsers.
 
 ## Future Improvements:
