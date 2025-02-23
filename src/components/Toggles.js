@@ -61,7 +61,7 @@ const Toggles = ({ onProgressChange }) => {
       {progress === 100 ? (
         <p className="toggles-answer">The answer is correct!</p>
       ) : (
-        <p className="toggles-answer">The answer is incorect</p>
+        <p className="toggles-answer">The answer is incorrect</p>
       )}
     </div>
   );
