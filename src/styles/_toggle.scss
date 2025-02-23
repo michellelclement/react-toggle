@@ -1,5 +1,4 @@
 .toggle {
-  display: inline-block;
   position: relative;
   width: 100%;
   border: 2px solid $opaqueWhite;
@@ -11,7 +10,6 @@
 }
 
 .toggle label {
-  display: inline-block;
   position: relative;
   height: 100%;
   width: 50%;
@@ -38,19 +36,19 @@
 
 .toggle-option-slider::after {
   content: "";
+  position: absolute;
+  left: 0;
   width: 50%;
   height: 100%;
-  left: 0;
   border-radius: 50px;
   background: $opaqueWhite;
-  position: absolute;
   z-index: 2;
   transition: all 0.15s ease;
 }
 
-.toggle .toggle-option-slider::after {
-  width: 50%;
-}
+// .toggle .toggle-option-slider::after {
+//   width: 50%;
+// }
 
 .toggle input:first-of-type:checked ~ .toggle-option-slider::after {
   left: 0px;
@@ -73,14 +71,14 @@
 // Stacked
 @include media($m-screen-down) {
   .toggle--stacked {
-    border-radius: 20px;
+    border-radius: 30px;
     overflow: hidden;
 
     .toggle-container {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      position: relative;
 
       .toggle-option-slider {
         position: absolute;
@@ -92,23 +90,23 @@
       }
 
       label {
-        text-align: center;
-        width: 100%;
-        height: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 50%;
       }
 
       .toggle-option-slider::after {
         content: "";
+        position: absolute;
         width: 100%;
         height: 50%;
         top: 0;
         left: 0;
         border-radius: 0;
         background: $opaqueWhite;
-        position: absolute;
         z-index: 2;
         transition: top 0.2s ease-in-out;
       }
