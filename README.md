@@ -66,12 +66,13 @@ This project was bootstrapped with the [Create React App](https://create-react-a
 
 ## Installation:
 
-Installation Instructions
+### Clone the repository
 
-1. Clone the repository: **git clone git@github.com:michellelclement/react-toggle.git**
-2. Install dependencies: **npm install**
-3. Start the development server: **npm start**
-4. Visit **http://localhost:3000** to view the app in the browser
+`[GitHub Repository](https://github.com/yourusername/your-repo.git)`:
+
+### Install dependencies:
+
+#### `npm install`
 
 ### Available Scripts
 
