@@ -19,6 +19,7 @@ const Toggles = ({ onProgressChange }) => {
   ).length;
 
   // Calculate percentage progress (how many answers are correct out of total)
+  // Set isLocked if 100% of answers are correct
   const progress = (correctCount / questionsData.length) * 100;
   const isLocked = progress === 100;
 
@@ -42,6 +43,7 @@ const Toggles = ({ onProgressChange }) => {
     // Loop through question data and render a toggle for each question
     // Pass down current selected option
     // Pass handleOptionChange so Toggle.js can call it when user selects an option
+    // Pass down percentage correct value via isLocked
     <div className="toggles">
       <h1 className="toggles-question">{questionTitle}</h1>
       {questionsData.map((question) => (
@@ -57,7 +59,7 @@ const Toggles = ({ onProgressChange }) => {
         />
       ))}
 
-      {/* Show message if all answers are correct or not */}
+      {/* Show message if all answers are correct or not based on value of progress */}
       {progress === 100 ? (
         <p className="toggles-answer">The answer is correct!</p>
       ) : (

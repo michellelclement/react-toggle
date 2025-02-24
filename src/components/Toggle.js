@@ -5,7 +5,7 @@ const Toggle = ({ option1, option2, toggleId, onOptionChange, isLocked }) => {
 
   // Check length of option text in order to change layout
   useEffect(() => {
-    const maxCharLimit = 15; // Adjust this as needed
+    const maxCharLimit = 15; // Adjust this as needed to switch layouts between horizontal and stacked layout
     if (
       option1.text.length > maxCharLimit ||
       option2.text.length > maxCharLimit

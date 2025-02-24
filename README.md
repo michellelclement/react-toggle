@@ -40,7 +40,7 @@ This project was bootstrapped with the [Create React App](https://create-react-a
 
 - **Limited React Experience**: I am currently in the process of learning React, and this task provided an excellent opportunity to focus on learning the core concepts and apply them in a real project. While I have successfully implemented the required functionality, there may be areas for improvement and further expansion of my knowledge and understanding.
 - **TypeScript Not Used**: The task required TypeScript, but due to my lack of experience with it to date, I implemented the solution using JavaScript instead, leveraging my existing skills to deliver the best result possible. Given more time, I would like to learn and apply TypeScript to improve the solution.
-- **Accessibility Considerations**: While performing accessibility checks (Silktide Extension: [https://silktide.com/](https://silktide.com/)), unfortunately, the colour contrast did not meet the recommended accessibility guidelines. I would enhance the contrast in future versions to ensure they are WCAG-compliant.
+- **Accessibility Considerations**: While performing accessibility checks using the [Silktide Extension](https://silktide.com/), unfortunately, the colour contrast did not meet the recommended accessibility guidelines. I would enhance the contrast in future versions to ensure they are WCAG-compliant.
 - **Screen Reader Compatibility**: The component has been tested with a screen reader, but it does not cycle through the toggle options as expected. Due to time constraints, I was unable to fully address this issue, but I recognize the importance of making the component accessible to screen reader users and would plan to revisit it in future updates.
 
 ## Assumptions:
@@ -68,7 +68,7 @@ This project was bootstrapped with the [Create React App](https://create-react-a
 
 ### Clone the repository
 
-[https://github.com/michellelclement/react-toggle](https://github.com/michellelclement/react-toggle):
+[https://github.com/michellelclement/react-toggle](https://github.com/michellelclement/react-toggle)
 
 ### Install dependencies:
 
@@ -96,6 +96,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
